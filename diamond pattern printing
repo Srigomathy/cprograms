@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+void main()
+{
+    int n,i,j,k,l;
+    for(k=1;k<=5;k++)
+    {
+        for(l=1;l<=5-k;l++)
+        {
+            printf("    ");
+        }
+        for(l=1;l<=k;l++)
+        {
+            printf("*\t \t");
+        }
+        printf("\n");
+    }
+    for(i=0;i<=5;i++)
+    {
+        for(j=1;j<=i;j++)
+        {
+            printf("    ");
+        }
+        for(j=1;j<=5-i;j++)
+        {
+            printf("*\t \t");
+        }
+        printf("\n");
+    }
+    
+}
