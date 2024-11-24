@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct
+{
+    char name[20];
+    int age;
+    int mark[10];
+}student;
+
+void maxmark(student iyr[40],int n)
+{
+    int i,j,sum,max=0,y;
+    char hn[20];
+    for(i=0;i<n;i++)
+    {
+       sum=0;
+       for(j=0;j<5;j++)
+       {
+           sum=sum+iyr[i].mark[j];
+           if(sum>max)
+           {
+           max=sum;
+           strcpy(hn,iyr[i].name);
+           y=iyr[i].age;
+           }
+       }
+    }
+ printf("the max mark is %d is scored by %s of age %d",max,hn,y);
+}
+
+void main() 
+{
+   student iyr[40];
+   int i,n,j,sum;
+   printf("enter the number of students:");
+   scanf("%d",&n);
+   for(i=0;i<n;i++)
+   {
+       printf("enter the student's name: ");
+       scanf("%s",&iyr[i].name);
+       printf("enter the student's age:");
+       scanf("%d",&iyr[i].age);
+       for(j=0;j<5;j++)
+       {
+          printf("enter mark %d :",j+1);
+          scanf("%d",&iyr[i].mark[j]);
+       }
+       sum=0;
+       for(j=0;j<5;j++)
+       {
+          sum+=iyr[i].mark[j];
+       }
+       printf("total mark of student %d is:%d\n",i+1,sum);
+   }
+   maxmark(iyr,n); 
+}
