@@ -1,0 +1,33 @@
+#include <stdio.h>
+void swap(int *a,int *b,int *c,int *d,int *e,int *f)
+{
+    int temp,t,s;
+    temp=*f;
+    *f=*a;
+    *a=temp;
+    t=*e;
+    *e=*b;
+    *b=t;
+    s=*d;
+    *d=*c;
+    *c=s;
+    printf("after swapping :%d %d %d %d %d %d",*a,*b,*c,*d,*e,*f);
+}
+void main()
+{
+   int a,b,c,d,e,f;
+   printf("enter num 1:");
+   scanf("%d",&a);
+   printf("enter num 2:");
+   scanf("%d",&b);
+   printf("enter num 3:");
+   scanf("%d",&c);
+   printf("enter num 4:");
+   scanf("%d",&d);
+   printf("enter num 5:");
+   scanf("%d",&e);
+   printf("enter num 6:");
+   scanf("%d",&f);
+   printf("before swapping :%d %d %d %d %d %d\n",a,b,c,d,e,f);
+   swap(&a,&b,&c,&d,&e,&f);
+}
