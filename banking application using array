@@ -1,0 +1,65 @@
+#include<stdio.h>
+void main ()
+{
+    int bal[50],n,index[50],i,x,d,w,totalfund=0;
+    printf("enter number of users:");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("enter bank balance of user %d:",i+1);
+        scanf("%d",&bal[i]);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("enter index of user %d:",i+1);
+        scanf("%d",&index[i]);
+    }
+    printf("enter 1 for deposit\nenter 2 for withdraw\nenter 3 for checking balance\n");
+    for(i=0;i<n;i++)
+    {
+        printf("enter your choice :\n");
+        scanf("%d",&x);
+        if(bal[i]>500)
+        {
+        switch(x)
+        {
+            case 1:
+             printf("enter deposit amount :");
+             scanf("%d",&d);
+             bal[i]+=d;
+             printf("balance after depositing :%d",bal[i]);
+             break;
+            case 2:
+             printf("enter withdrawal amount:");
+             scanf("%d",&w);
+             if(w<bal[i])
+             {
+             bal[i]-=w;
+             printf("balance after withdrawal :%d\n",bal[i]);
+             }
+             else 
+             {
+                 printf("sorry your bank balance is not sufficient!")
+             }
+             break;
+             
+            case 3:
+             printf("%d\n",bal[i]);
+             break;
+             
+            default:
+             printf("invalid input");
+             
+        }
+        }
+        else
+        {
+            printf("no enough bank balance!");
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        totalfund+=bal[i];
+    }
+    printf("totalfund is:%d",totalfund);
+}
