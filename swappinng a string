@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void swap(char str[100])
+{
+    int start=0,end,x,temp;
+    x=strlen(str);
+    end=x-1;
+    while(str[start]!='\0')
+    {
+        if(start<end)
+        {
+            temp=str[start];
+            str[start]=str[end];
+            str[end]=temp;
+        }
+        start++;
+        end--;
+    }
+  //  return str;
+}
+void main()
+{
+   char str[100];
+   printf("enter a string:");
+   fgets(str,sizeof(str),stdin);
+   swap(str);
+   printf("%s",str);
+}
