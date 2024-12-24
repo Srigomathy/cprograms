@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void main() 
+{
+    int i,votes[100],voters[100],v,c,candi[10],maxvote=0;
+    printf("enter the number of candidates:");
+    scanf("%d",&c);
+    printf("enter the number of voters:");
+    scanf("%d",&v);
+    for(i=0;i<c;i++)
+    {
+        printf("enter candidates:");
+        scanf("%d",&candi[i]);
+    }
+    for(i=0;i<v;i++)
+    {
+        printf("enter your choice:");
+        scanf("%d",&voters[i]);
+    }
+    for(i=0;i<v;i++)
+    {
+        votes[voters[i]]++;
+    }
+    for(i=1;i<v;i++)
+    {
+        printf("candidate %d has gained %d votes\n",i,votes[i]);
+    }
+    for(i=0;i<v;i++)
+    {
+        if(votes[i]!=0)
+        {
+           if(votes[i]>maxvote)
+           { 
+            maxvote=votes[i];
+            printf("%d has gained %d votes and has won!",i,maxvote);
+           }
+        }
+    }   
+}
