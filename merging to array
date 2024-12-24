@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+void main() 
+{
+   int a[10],b[10],c[10],i,j,k,n1,n2,temp,x;
+   printf("enter n1:");
+   scanf("%d",&n1);
+   printf("enter n2:");
+   scanf("%d",&n2);
+   for(i=0;i<n1;i++)
+   {
+       printf("enter element %d of array 1:",i+1);
+       scanf("%d",&a[i]);
+   }
+   for(i=0;i<n2;i++)
+   {
+       printf("enter element %d of array 2:",i+1);
+       scanf("%d",&b[i]);
+   } 
+   for(i=0;i<n2;i++)
+   {
+       c[i]=b[i];
+   }
+   for(i=0;i<n1;i++)
+   {
+       c[n2+i]=a[i];
+   }
+   printf("array three contains:[");
+   for(i=0;i<n1+n2;i++)
+   {
+       printf("\t%d",c[i]);
+   }
+   printf("]\n");
+   k=0;
+   j=n1+n2-1;
+   for(i=0;i<n1+n2;i++)
+   {
+       for(x=0;x<n1+n2;x++)
+       {
+       if(c[x]>c[i])
+       {
+           temp=c[x];
+           c[x]=c[i];
+           c[i]=temp;
+       }
+       }
+   }
+    printf("merged array contains:[");
+   for(i=0;i<n1+n2;i++)
+   {
+       printf("\t%d",c[i]);
+   }
+   printf("]");
+}
