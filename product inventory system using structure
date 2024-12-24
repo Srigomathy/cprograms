@@ -1,0 +1,40 @@
+#include <stdio.h>
+typedef struct
+{
+    int pid;
+    char name[20];
+    int price;
+    int quantity;
+}product;
+void main()
+{
+    product p[10];
+    int n,i,tot,max=0,m=0;
+    printf("enter number of products :");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("\nenter the product id:");
+        scanf("%d",&p[i].pid);
+        printf("enter the product name:");
+        scanf("%s",&p[i].name);
+        printf("enter the product price:");
+        scanf("%d",&p[i].price);
+        printf("enter the product quantity:");
+        scanf("%d",&p[i].quantity);
+    }
+    for(i=0;i<n;i++)
+    {
+        tot=p[i].price*p[i].quantity;
+        if(tot>max)
+        {
+            max=tot;
+        }
+    }
+   printf("\nthe highest total value is:%d\n",max);
+   for(i=0;i<n;i++)
+   {
+      m+=p[i].price*p[i].quantity;
+   }
+   printf("the total monetary value is:%d",m);
+}
