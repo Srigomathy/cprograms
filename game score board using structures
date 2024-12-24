@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+typedef struct{
+    int levels;
+    char name[20];
+    int points[50];
+}s;
+void maxpoints(s p[40],int n)
+{
+    int i,tot,j,max=0;
+    char m[20];
+    for(i=0;i<n;i++)
+    {
+        tot=0;
+        for(j=0;j<5;j++)
+        {
+            tot+=p[i].points[j];
+        }
+        if(tot>max)
+        {
+            max=tot;
+            strcpy(m,p[i].name);
+        }
+    }
+    printf("\n%s has scored maximum points of %d",m,max);
+}
+void main()
+{
+  s p[40];
+  int i,n,j;
+  printf("enter the number of players:");
+  scanf("%d",&n);
+  for(i=0;i<n;i++)
+  {
+      printf("\nenter the name of player %d:",i+1);
+      scanf("%s",&p[i].name);
+      printf("enter the number of level %s has completed:",p[i].name);
+      scanf("%d",&p[i].levels);
+      int x=p[i].levels;
+      for(j=0;j<x;j++)
+      {
+      printf("enter the points in level %d:",j+1);
+      scanf("%d",&p[i].points[j]);
+      }
+  }
+ maxpoints(p,n); 
+
+}
